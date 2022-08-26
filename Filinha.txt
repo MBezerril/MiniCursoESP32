@@ -1,0 +1,42 @@
+Bibliotecas:
+	Sensor de temperatura
+		<DHTesp.h>
+	Wifi:
+		<WiFi.h>
+		<HTTPClient.h>
+	Json:
+		<ArduinoJson.h>
+
+Sensor de temperatura:
+	DHTesp dht;
+	dht.getTemperature();
+	
+Wifi:
+	Credenciais:
+		"Wokwi-GUEST"
+		""
+	Configurar e usar:
+		WiFi.begin(ssid, password);
+		while (WiFi.status() != WL_CONNECTED) {
+			delay(500);
+			Serial.print(".");
+		}
+		WiFi.localIP();
+
+Json e HTTP:
+	Json:
+		StaticJsonDocument < 256 > doc;
+		doc["lido_local"] = dht.getTemperature();
+	HTTP:
+		HTTPClient httppost;
+		httppost.begin(urlpost);
+		httppost.addHeader("Content-Type", "application/json");
+		
+		serializeJson(doc, httpRequestData);
+		int httpResponseCode = httppost.POST(httpRequestData);
+		
+		if (httpResponseCode == 200) {
+		}else{
+		}
+	
+	
