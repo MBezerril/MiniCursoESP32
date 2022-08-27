@@ -9,6 +9,7 @@ Bibliotecas:
 
 Sensor de temperatura:
 	DHTesp dht;
+	dht.setup(DHTPIN, DHTesp::DHT22);
 	dht.getTemperature();
 	
 Wifi:
