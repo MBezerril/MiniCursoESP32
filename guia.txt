@@ -6,12 +6,14 @@ Bibliotecas:
 		<HTTPClient.h>
 	Json:
 		<ArduinoJson.h>
-
+		
 Sensor de temperatura:
 	DHTesp dht;
 	dht.setup(DHTPIN, DHTesp::DHT22);
 	dht.getTemperature();
 	
+	DHTPIN 18
+
 Wifi:
 	Credenciais:
 		"Wokwi-GUEST"
@@ -25,6 +27,8 @@ Wifi:
 		WiFi.localIP();
 
 Json e HTTP:
+	Declarar Global:
+		String httpRequestData
 	Json:
 		StaticJsonDocument < 256 > doc;
 		doc["lido_local"] = dht.getTemperature();
