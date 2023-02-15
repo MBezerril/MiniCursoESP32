@@ -1,5 +1,5 @@
 # Mini Curso ESP32
-Material apresentado no minicurso de esp32 na 28ª semana da computação.
+Material apresentado no minicurso de esp32 na 28ª e 29º semana da computação.
 
 ## Simulador
 O simulador utilizado se encontra no link:
